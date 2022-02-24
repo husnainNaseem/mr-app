@@ -111,7 +111,7 @@ const Login = (_props) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen absolute inset-0 py-12 mt-8 ">
+    <div className="flex justify-center items-center min-h-screen absolute inset-0 py-12 mt-0 ">
       <form
         onSubmit={(e) => login(e)}
         className="max-w-[480px] rounded-[8px] w-full bg-[#27272A] p-10"

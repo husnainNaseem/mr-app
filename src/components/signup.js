@@ -125,7 +125,7 @@ const Signup = (_props) => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen py-12 absolute inset-0 w-full mt-[290px]">
+        <div className="flex justify-center items-center min-h-screen py-12 absolute inset-0 w-full mt-[260px]">
             <div className="flex items-stretch">
                 <form
                     onSubmit={(e) => sendInvite(e)}
