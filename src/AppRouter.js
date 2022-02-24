@@ -54,7 +54,7 @@ const AppRouter = () => {
             <RemoveTrailingSlash />
             <AuthProvider>
                 <Routes>
-                    <Route path="/Homepage" element={<Homepage />} />
+                    <Route path="/" element={<Homepage />} />
                     <Route path="/auth/sign-in" element={<SignIn />} />
                     <Route path="/auth/signup" element={<Signup />} />
                     <Route path="/auth/reset-password" element={<ResetPass />} />

@@ -41,7 +41,7 @@ const Signup = (_props) => {
                   })
                     .then(function() {
                         // Update successful.
-                        window.location.href = "/Homepage";
+                        window.location.href = "/";
                     })
                     .catch(function(error) {
                         // An error happened.

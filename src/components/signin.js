@@ -45,7 +45,7 @@ const Login = (_props) => {
             email:user.email,
             phoneNumber:user.phoneNumber
         });
-        window.location.href = "/Homepage";
+        window.location.href = "/";
         updateProfile(auth.currentUser, {
           displayName: "Jane Q. User",
           photoURL: "https://example.com/jane-q-user/profile.jpg",
