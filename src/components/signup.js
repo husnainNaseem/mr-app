@@ -18,6 +18,7 @@ const Signup = (_props) => {
     const [City, setCity] = useState("");
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
+    const [Province, setProvince] = useState("");
     const [rePass, setRePass] = useState("");
     const [inviteSuccess, setInviteSuccess] = useState(false);
     const [isPassMisMatch, setIsPassMisMatch] = useState(false);
@@ -309,6 +310,38 @@ const Signup = (_props) => {
                             </svg>
                         </div>
                     </div>
+                    <div className="mt-6">
+                        <label
+                            htmlFor="name"
+                            className="text-sm font-medium leading-none text-white"
+                        >
+                            Province
+                        </label>
+                        <div className="relative mt-2">
+                            <input
+                                required
+                                id="province"
+                                className="bg-[#3F3F46] focus:outline-none rounded py-3 pr-3 pl-[36px] w-full text-white"
+                                type="text"
+                                value={Province}
+                                onChange={(e) => setProvince(e.target.value)}
+                                placeholder={"Province"}
+                            />
+                            <svg
+                                className="absolute inset-0 m-auto ml-3"
+                                width={14}
+                                height={14}
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00001C0.333496 3.31801 3.31816 0.333344 7.00016 0.333344C10.6822 0.333344 13.6668 3.31801 13.6668 7.00001C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM3.66683 7.00001C3.66683 7.88407 4.01802 8.73191 4.64314 9.35703C5.26826 9.98215 6.11611 10.3333 7.00016 10.3333C7.88422 10.3333 8.73206 9.98215 9.35719 9.35703C9.98231 8.73191 10.3335 7.88407 10.3335 7.00001H9.00016C9.00016 7.53044 8.78945 8.03915 8.41438 8.41422C8.0393 8.7893 7.5306 9.00001 7.00016 9.00001C6.46973 9.00001 5.96102 8.7893 5.58595 8.41422C5.21088 8.03915 5.00016 7.53044 5.00016 7.00001H3.66683Z"
+                                    fill="#E4E4E7"
+                                />
+                            </svg>
+                        </div>
+                    </div>
 
                     <div className="mt-6">
                         <label
@@ -515,11 +548,11 @@ const Signup = (_props) => {
                             <p className="my-4 text-sm text-red-400">{manualErrorMessage}</p>
                         )}
                         <div className="mt-4 inline-flex space-x-2 items-center justify-start">
-                            <p className="text-xs font-medium leading-none text-gray-400">
+                            <p className="text-xs font-medium leading-none text-white">
                                 Already have an account?
                             </p>
                             <Link to="/auth/sign-in">
-                                <a className="text-xs font-medium leading-none underline text-gray-200">
+                                <a className="text-xs font-medium leading-none underline text-white">
                                     Sign in here
                                 </a>
                             </Link>

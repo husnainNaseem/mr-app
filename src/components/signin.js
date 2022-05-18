@@ -282,10 +282,10 @@ const Login = (_props) => {
         <div className="flex items-center mt-6 justify-between">
           <div className="flex items-center">
             <input type="checkbox" />
-            <p className="text-xs leading-3 text-gray-300 ml-2">Remember me</p>
+            <p className="text-xs leading-3 text-white ml-2">Remember me</p>
           </div>
           <Link to="/auth/reset-password">
-            <a className="text-xs leading-3 underline text-right text-gray-300">
+            <a className="text-xs leading-3 underline text-right text-white">
               Forgot password?
             </a>
           </Link>
@@ -300,11 +300,11 @@ const Login = (_props) => {
           <p className="my-4 text-sm text-red-400">{manualErrorMessage}</p>
         )}
         <div className="mt-4 inline-flex space-x-2 items-center justify-start">
-          <p className="text-xs font-medium leading-none text-gray-400">
+          <p className="text-xs font-medium leading-none text-white">
             Don't have an account?
           </p>
           <Link to="/auth/signup">
-            <a className="text-xs font-medium leading-none underline text-gray-200">
+            <a className="text-xs font-medium leading-none underline text-white">
               Sign up here
             </a>
           </Link>

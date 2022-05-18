@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { AuthProvider } from "./auth";
-// import SignIn from "./pages/auth/signin";
 import SignIn from "./components/signin";
 import Signup from "./components/signup";
-// import Signup from "./pages/auth/signup";
-// import ResetPass from "./pages/auth/reset-password";
 import ResetPass from "./components/reset-password";
-import Homepage from "./components/Homepage";
+import Homepage from "./pages/Homepage";
 
 
 const AppRouter = () => {
