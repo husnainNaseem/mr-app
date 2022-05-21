@@ -1,14 +1,13 @@
 import React from 'react'
-import Aboutus from '../images/Aboutus.jpg'
 
-function AboutUs() {
+function About() {
     return (
-        <div className='container mx-auto max-w-screen-lg'>
+        <div className='container mx-auto max-w-screen-xl pt-1 pb-4'>
             <div className='mt-3'>
-                <span className='text-2xl text-darkblue font-semibold'>About Us</span>
+                <span className='text-2xl text-darkblue font-semibold'>About</span>
             </div>
             <div className='mt-3'>
-                <img className='w-full' src={Aboutus} alt="this is car image" />
+                <img className='w-full' src='/images/Aboutus.jpg' alt="this is car image" />
             </div>
             <div className='mt-3'>
                 <p className='tracking-tight leading-leading-relaxed text-[17px]'>
@@ -23,4 +22,4 @@ function AboutUs() {
     )
 }
 
-export default AboutUs
+export default About

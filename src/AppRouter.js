@@ -6,6 +6,10 @@ import SignIn from "./components/signin";
 import Signup from "./components/signup";
 import ResetPass from "./components/reset-password";
 import Homepage from "./pages/Homepage";
+import AboutPage from "./pages/about-page";
+import ContactPage from "./pages/contact-page";
+import PostAd from "./pages/post-ad";
+import ProductPage from "./pages/product-detail";
 
 
 const AppRouter = () => {
@@ -51,7 +55,11 @@ const AppRouter = () => {
             <RemoveTrailingSlash />
             <AuthProvider>
                 <Routes>
-                    <Route path="/" element={<Homepage />} />
+                    <Route path="/" exact element={<Homepage />} />
+                    <Route path="/about-page" element={<AboutPage />} />
+                    <Route path="/post-ad" element={<PostAd />} />
+                    <Route path="/product-detail" element={<ProductPage />} />
+                    <Route path="/contact-page" element={<ContactPage />} />
                     <Route path="/auth/sign-in" element={<SignIn />} />
                     <Route path="/auth/signup" element={<Signup />} />
                     <Route path="/auth/reset-password" element={<ResetPass />} />
