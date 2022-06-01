@@ -58,7 +58,7 @@ const AppRouter = () => {
                     <Route path="/" exact element={<Homepage />} />
                     <Route path="/about-page" element={<AboutPage />} />
                     <Route path="/post-ad" element={<PostAd />} />
-                    <Route path="/product-detail" element={<ProductPage />} />
+                    <Route path="/product-detail/:id" element={<ProductPage />} />
                     <Route path="/contact-page" element={<ContactPage />} />
                     <Route path="/auth/sign-in" element={<SignIn />} />
                     <Route path="/auth/signup" element={<Signup />} />
