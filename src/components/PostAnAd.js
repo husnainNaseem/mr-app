@@ -11,12 +11,13 @@ function PostAnAd() {
     const [cat, setCat] = useState();
     const [carInfo, setCarInfo] = useState("");
     const [registeredIn, setRegisteredIn] = useState("");
-    const [color, setColor] = useState("");
+    const [engine, setEngine] = useState("");
     const [mileage, setMileage] = useState("");
     const [price, setPrice] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [description, setDescription] = useState("");
     const [productImg, setProductImg] = useState("");
+    const [gear, setGear] = useState("");
 
     const types = ['image/png', 'image/jpeg']; // image types
 
@@ -41,12 +42,13 @@ function PostAnAd() {
                             city: city,
                             carInfo: carInfo,
                             registeredIn: registeredIn,
-                            color: color,
+                            engine: engine,
                             mileage: mileage,
                             price: price,
                             mobileNumber: mobileNumber,
                             description: description,
                             cat: cat,
+                            gear: gear,
                             img: url,
                             id: uuidv4()
                         })
@@ -54,8 +56,9 @@ function PostAnAd() {
                                 alert("Post submitted");
                                 setCity('');
                                 setCarInfo('')
-                                setColor('')
+                                setEngine('')
                                 setRegisteredIn('');
+                                setGear('')
                                 setMileage('');
                                 setPrice('');
                                 setCat('');
@@ -75,7 +78,10 @@ function PostAnAd() {
     return (
         <div className='container mx-auto'>
             <div className='mx-auto max-w-sm mb-4'>
-                <label for="email" className="block mb-2 text-md font-medium text-darkblue dark:text-gray-300">City</label>
+                <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Brand</label>
+                <input value={carInfo} onChange={(e) => { setCarInfo(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Car Information" />
+
+                <label for="email" className="block mb-2 mt-2 text-md font-medium text-darkblue dark:text-gray-300">City</label>
                 <input value={city} onChange={(e) => { setCity(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-darkblue text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-darkblue block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City" />
 
                 <label className="block mb-2 text-md font-medium text-darkblue dark:text-gray-300 mt-2">Categories</label>
@@ -93,14 +99,14 @@ function PostAnAd() {
                     <option className="font-medium text-base">Bus</option>
                 </select>
 
-                <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Car Information</label>
-                <input value={carInfo} onChange={(e) => { setCarInfo(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Car Information" />
-
                 <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Registered In</label>
                 <input value={registeredIn} onChange={(e) => { setRegisteredIn(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Registered In" />
 
-                <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Color</label>
-                <input value={color} onChange={(e) => { setColor(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Color" />
+                <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Engine</label>
+                <input value={engine} onChange={(e) => { setEngine(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Petrol or gas" />
+
+                <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Gear</label>
+                <input value={gear} onChange={(e) => { setGear(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Auto or manual" />
 
                 <label for="email" class="mt-3 block mb-2 text-md font-medium text-darkblue dark:text-gray-300">Mileage * (km)</label>
                 <input value={mileage} onChange={(e) => { setMileage(e.target.value) }} type="email" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-darkblue focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mileage" />

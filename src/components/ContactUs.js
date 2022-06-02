@@ -12,17 +12,7 @@ function ContactUs() {
                                     Contact Us
                                 </span>
                                 <h2
-                                    class="
-                  text-darkblue
-                  mb-6
-                  uppercase
-                  font-bold
-                  text-[32px]
-                  sm:text-[40px]
-                  lg:text-[36px]
-                  xl:text-[40px]
-                  "
-                                >
+                                    class="text-darkblue mb-6 uppercase font-bold text-[32px] sm:text-[40px] lg:text-[36px]xl:text-[40px]">
                                     GET IN TOUCH WITH US
                                 </h2>
                                 <p class="text-base text-body-color leading-relaxed mb-9">
@@ -39,17 +29,8 @@ function ContactUs() {
                                     <div class="mb-6">
                                         <input
                                             type="text"
-                                            placeholder="Your Name"
-                                            class="
-                        w-full
-                        rounded
-                        py-3
-                        px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
+                                            placeholder="Your NaFme"
+                                            class="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary
                         "
                                         />
                                     </div>
@@ -57,8 +38,7 @@ function ContactUs() {
                                         <input
                                             type="email"
                                             placeholder="Your Email"
-                                            class="
-                        w-full
+                                            class="w-full
                         rounded
                         py-3
                         px-[14px]

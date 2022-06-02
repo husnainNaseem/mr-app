@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Jeep({ title, price, city, image }) {
+function Jeep({ title, price, city, img, id }) {
     return (
         <>
-            <a href='/product-detail'>
+        <Link to={`/product-detail/${id}`}>
                 <div className='container mx-auto box shadow-2xl'>
                     <div>
-                        <img className='w-full h-full' src={image} alt="this is car image" />
+                        <img className='w-full h-full' src={img} alt="this is car image" />
                     </div>
                     <div className='pl-3 py-3 leading-normal bg-white'>
                         <h1>{title}</h1>
@@ -14,7 +15,7 @@ function Jeep({ title, price, city, image }) {
                         <p>{city}</p>
                     </div>
                 </div>
-            </a>
+            </Link>
         </>
     )
 }
