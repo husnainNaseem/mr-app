@@ -11,12 +11,15 @@ import Bus from "../components/Bus";
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { db, firebase } from '../firebase'
 import { collection, getDocs } from "firebase/firestore";
+import Dashboard from "../components/Dashboard";
+import Footer from "../components/Footer";
 
 const Homepage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [items, setItems] = useState([]);
     const [httpError, setHttpError] = useState(null);
     const [maxNum, setMaxNum] = useState(4);
+    const [searchItem, setSearchItem] = useState('');
 
     useEffect(() => {
         const getData = async () => {
@@ -36,8 +39,7 @@ const Homepage = () => {
         };
         getData();
     }, []);
-
-    //   console.log(itemsitems
+    console.log('search ==>', searchItem);
 
 
     const signOutUser = () => {
@@ -50,16 +52,19 @@ const Homepage = () => {
                 // An error happened.
             });
     };
+
+
+
     return (
         <>
             <div>
                 <Navbar />
-                <HeroSection />
+                <HeroSection searchItem={searchItem} setSearchItem={setSearchItem} />
                 <OurProducts />
                 <div className="bg-[#F2F3F3] pb-4">
                     <div className="container mx-auto text-2xl text-darkblue font-semibold pb-4">Cars</div>
                     <div className="container mx-auto grid grid-cols-4 gap-4 justify-center">
-                        {items.slice(0, maxNum).map((item, index) => {
+                        {searchItem ? items?.filter((car) => car.cat === 'Car')?.slice(0, maxNum).filter((item) => item?.carInfo.includes(searchItem)).map((item, index) => {
                             return (
                                 <div key={index}>
                                     <Car
@@ -67,7 +72,16 @@ const Homepage = () => {
                                     />
                                 </div>
                             )
-                        })}
+                        }) :
+                            items?.filter((car) => car.cat === 'Car')?.slice(0, maxNum).map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <Car
+                                            {...item}
+                                        />
+                                    </div>
+                                )
+                            })}
 
                     </div>
                     <div className="flex justify-center mt-6">
@@ -84,7 +98,7 @@ const Homepage = () => {
                 <div className="bg-[#F2F3F3] pb-4">
                     <div className="container mx-auto text-2xl text-darkblue font-semibold pb-4">Bikes</div>
                     <div className="container mx-auto grid grid-cols-4 gap-4 justify-center">
-                        {items.slice(0, maxNum).map((item, index) => {
+                        {searchItem ? items?.filter((bike) => bike.cat === 'Bike')?.slice(0, maxNum).filter((item) => item?.carInfo.includes(searchItem)).map((item, index) => {
                             return (
                                 <div key={index}>
                                     <Bike
@@ -92,7 +106,16 @@ const Homepage = () => {
                                     />
                                 </div>
                             )
-                        })}
+                        }) :
+                            items?.filter((bike) => bike.cat === 'Bike')?.slice(0, maxNum).map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <Bike
+                                            {...item}
+                                        />
+                                    </div>
+                                )
+                            })}
                     </div>
                     <div className="flex justify-center mt-6">
                         {maxNum ?
@@ -108,7 +131,7 @@ const Homepage = () => {
                 <div className="bg-[#F2F3F3] pb-4">
                     <div className="container mx-auto text-2xl text-darkblue font-semibold pb-4">Jeeps</div>
                     <div className="container mx-auto grid grid-cols-4 gap-4 justify-center">
-                        {items.slice(0, maxNum).map((item, index) => {
+                        {searchItem ? items?.filter((jeep) => jeep.cat === 'Jeep')?.slice(0, maxNum).filter((item) => item?.carInfo.includes(searchItem)).map((item, index) => {
                             return (
                                 <div key={index}>
                                     <Jeep
@@ -116,7 +139,17 @@ const Homepage = () => {
                                     />
                                 </div>
                             )
-                        })}
+                        }) :
+                            items?.filter((Jeep) => Jeep.cat === 'Jeep')?.slice(0, maxNum).map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <Jeep
+                                            {...item}
+                                        />
+                                    </div>
+                                )
+                            })}
+
                     </div>
                     <div className="flex justify-center mt-6">
                         {maxNum ?
@@ -132,7 +165,7 @@ const Homepage = () => {
                 <div className="bg-[#F2F3F3] pb-4">
                     <div className="container mx-auto text-2xl text-darkblue font-semibold pb-4">SUV</div>
                     <div className="container mx-auto grid grid-cols-4 gap-4 justify-center">
-                        {items.slice(0, maxNum).map((item, index) => {
+                        {searchItem ? items?.filter((suv) => suv.cat === 'Suv')?.slice(0, maxNum).filter((item) => item?.carInfo.includes(searchItem)).map((item, index) => {
                             return (
                                 <div key={index}>
                                     <SUV
@@ -140,7 +173,17 @@ const Homepage = () => {
                                     />
                                 </div>
                             )
-                        })}
+                        }) :
+                            items?.filter((Jeep) => Jeep.cat === 'Jeep')?.slice(0, maxNum).map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <SUV
+                                            {...item}
+                                        />
+                                    </div>
+                                )
+                            })}
+
                     </div>
                     <div className="flex justify-center mt-6">
                         {maxNum ?
@@ -156,7 +199,7 @@ const Homepage = () => {
                 <div className="bg-[#F2F3F3] pb-4">
                     <div className="container mx-auto text-2xl text-darkblue font-semibold pb-4">Buses</div>
                     <div className="container mx-auto grid grid-cols-4 gap-4 justify-center">
-                        {items.slice(0, maxNum).map((item, index) => {
+                        {searchItem ? items?.filter((car) => car.cat === 'Bus')?.slice(0, maxNum).filter((item) => item?.carInfo.includes(searchItem)).map((item, index) => {
                             return (
                                 <div key={index}>
                                     <Bus
@@ -164,7 +207,16 @@ const Homepage = () => {
                                     />
                                 </div>
                             )
-                        })}
+                        }) :
+                            items?.filter((car) => car.cat === 'Bus')?.slice(0, maxNum).map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <Bus
+                                            {...item}
+                                        />
+                                    </div>
+                                )
+                            })}
                     </div>
                     <div className="flex justify-center mt-6">
                         {maxNum ?
@@ -180,10 +232,15 @@ const Homepage = () => {
             </div>
 
 
-            <div className="text-center">
+            <div className="text-center bg-[#F2F3F3]">
                 <button onClick={signOutUser} class="bg-darkblue text-white hover:bg-darkblue font-bold py-2 px-4 rounded-full mt-4 mb-4">
                     SignOut
                 </button>
+            </div>
+
+            <div>
+                <Footer />
+
             </div>
 
         </>

@@ -4,7 +4,8 @@ import Navbar from '../../components/navbar'
 import Product from '../../components/Product'
 import { db, firebase } from '../../firebase'
 import { collection, getDocs } from "firebase/firestore";
-import { data } from "autoprefixer";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Footer from '../../components/Footer'
 
 function Index() {
   const [data, setData] = useState({});
@@ -33,13 +34,26 @@ function Index() {
     getData();
   }, []);
 
-
-  
+  const auth = getAuth();
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+  console.log('user id==>', user);
 
   return (
     <div>
       <Navbar />
-      <Product {...data} />
+      <Product {...data } {...user } />
+      <Footer />
     </div>
   )
 }

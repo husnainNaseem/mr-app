@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../components/Footer'
 import Navbar from '../components/navbar'
 import PostAnAd from '../components/PostAnAd'
 
@@ -12,6 +13,7 @@ function PostAd() {
                     <PostAnAd />
                 </div>
             </div>
+            <Footer/>
         </>
 
     )

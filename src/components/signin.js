@@ -105,7 +105,7 @@ const Login = (_props) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, pass)
       .then((res) => {
-        window.location.href = "/Homepage";
+        window.location.href = "/";
       })
       .catch((err) => console.log("err", setManualErrorMessage(err.message)));
   };

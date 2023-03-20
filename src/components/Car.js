@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Car({ title, price, city, img, id }) {
+function Car({ carInfo, price, city, img, id }) {
     return (
         <>
             <Link to={`/product-detail/${id}`}>
@@ -10,7 +10,7 @@ function Car({ title, price, city, img, id }) {
                         <img className='w-full h-full' src={img} alt="this is car image" />
                     </div>
                     <div className='pl-3 py-3 leading-normal bg-white'>
-                        <h1>{title}</h1>
+                        <h1>{carInfo}</h1>
                         <h2>{price}</h2>
                         <p>{city}</p>
                     </div>

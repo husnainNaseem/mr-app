@@ -10,7 +10,8 @@ import AboutPage from "./pages/about-page";
 import ContactPage from "./pages/contact-page";
 import PostAd from "./pages/post-ad";
 import ProductPage from "./pages/product-detail";
-
+import SigninAdmin from "./components/SigninAdmin";
+import Dashboard from "./components/Dashboard";
 
 const AppRouter = () => {
     const [user, setUser] = useState({});
@@ -60,6 +61,8 @@ const AppRouter = () => {
                     <Route path="/post-ad" element={<PostAd />} />
                     <Route path="/product-detail/:id" element={<ProductPage />} />
                     <Route path="/contact-page" element={<ContactPage />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/admin/sign-in" element={<SigninAdmin />} />
                     <Route path="/auth/sign-in" element={<SignIn />} />
                     <Route path="/auth/signup" element={<Signup />} />
                     <Route path="/auth/reset-password" element={<ResetPass />} />

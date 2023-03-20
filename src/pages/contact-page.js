@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactUs from '../components/ContactUs'
+import Footer from '../components/Footer'
 import Navbar from '../components/navbar'
 
 function ContactPage() {
@@ -7,6 +8,7 @@ function ContactPage() {
         <div>
             <Navbar />
             <ContactUs />
+            <Footer />
         </div>
     )
 }

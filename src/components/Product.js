@@ -1,23 +1,7 @@
 import React from 'react'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 // import {withRouter} from 'react-router-dom'
 
-// const auth = getAuth();
-// const user = auth.currentUser;
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     // User is signed out
-//     // ...
-//   }
-// });
-// console.log('user id==>', user);
-
-function Product({ carInfo, img, city, registeredIn, mileage, mobileNumber, price, description, engine, gear }) {
+function Product({ carInfo, img, city, registeredIn, mileage, mobileNumber, price, description, engine, gear, email}) {
   return (
     <div className='bg-[#F2F3F3]'>
       <div className='container mx-auto flex gap-8'>
@@ -73,7 +57,7 @@ function Product({ carInfo, img, city, registeredIn, mileage, mobileNumber, pric
             </div>
             <hr className='w-4/5 mx-auto' />
             <div className='py-2 pl-10'>
-              <h1 className='text-lg mt-2'>Owner: </h1>
+              <h1 className='text-lg mt-2'>Owner: {email}</h1>
               <h2 className='text-lg mt-1'>Address: {city}</h2>
             </div>
             <div className='flex justify-center space-x-6 pb-4 pt-1'>
